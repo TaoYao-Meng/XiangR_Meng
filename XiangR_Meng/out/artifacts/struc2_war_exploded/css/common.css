@@ -1,0 +1,16 @@
+body{position: relative;min-width: 1200px; background: #ffffff;}
+.content_box{width: 1100px;margin: 0 auto;overflow: hidden;}
+.header_outbox{background-color: #f3f3f3;height: 36px;border-bottom: 1px solid #dcdcdc;
+color: #666666;font-size: 13px;}
+.header_inbox{width: 1100px;margin: 0 auto;}
+.header_inbox p{float: left;line-height: 36px;color: #666666;}
+.header_inbox a{float: left;line-height: 36px;color: #666666;}
+.header_inbox .login{color: #41b6e7;}
+.header_inbox img{float: left;margin-top: 11px;}
+.my_action{float: right;}
+.my_action li {float: right;}
+.my_action li img{margin-left: 15px;margin-right: 5px;}
+.action_search_box{padding-top: 18px;}
+.logo{background-image: url("../img/common/logo.png");background-repeat: no-repeat;
+display: block;width: 199px;height: 61px;float: left;margin-right: 132px;}
+.inputbox{float: left;height: 58px;padding-top: 2px;width: 540px;line-height: 58px;}

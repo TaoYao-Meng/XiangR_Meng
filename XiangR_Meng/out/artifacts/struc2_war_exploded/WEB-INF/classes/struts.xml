@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="try" extends="struts-default" namespace="/">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+        <action name="login" class="action.loginin">
+            <result name="success" >/VehicleShow/carShow.jsp</result>
+            <result name="error">/login_error.jsp</result>
+            <result name="reg_success" >/login.jsp</result>
+            <result name="reg_error">/login_error.jsp</result>
+            <result name="change_success" >/VehicleShow/carindex.jsp</result>
+            <result name="manager" type="chain">manager_action</result>
+        </action>
+        <action name="car_action" class="action.show_action" method="read">
+            <result name="car_show">/CarInformation/comprehensive.jsp</result>
+        </action>
+        <action name="cart_action" class="action.cart_action" method="read">
+            <result name="cart_show">/cart_show.jsp</result>
+            <result name="car_show">/CarInformation/comprehensive.jsp</result>
+        </action>
+        <action name="pic_action" class="action.try_cut_img" method="file">
+            <result name="car_show">/CarInformation/comprehensive.jsp</result>
+            <result name="error">/login_error.jsp</result>
+        </action>
+        <action name="own_action" class="action.own_shop_action" method="read">
+            <result name="own_shop">/own_shop.jsp</result>
+            <result name="other_shop">/CarInformation/comprehensive.jsp</result>
+            <result name="error">/login_error.jsp</result>
+        </action>
+        <action name="detail_action" class="action.detail_action" method="read">
+            <result name="customer">/car_detail.jsp</result>
+            <result name="shop">/change_car_photo.jsp</result>
+            <result name="error">/login_error.jsp</result>
+            <result name="change_car_detail">/change_car_photo.jsp</result>
+        </action>
+        <action name="friend_action" class="action.friend_action" method="read">
+            <result name="find_success">/find_friend.jsp</result>
+            <result name="error">/login_error.jsp</result>
+        </action>
+        <action name="apply_action" class="action.apply_action" method="read">
+            <result name="find_success">/apply_information.jsp</result>
+            <result name="error">/login_error.jsp</result>
+        </action>
+        <action name="friend_show_action" class="action.friend_show_action" method="read">
+            <result name="friend_show">/friend_show.jsp</result>
+            <result name="error">/login_error.jsp</result>
+        </action>
+        <action name="manager_action" class="action.manager_action" method="read_car">
+            <result name="manager_car_show">/manager_car.jsp</result>
+            <result name="manager_user_show">/manager_user.jsp</result>
+        </action>
+        <action name="map_action" class="action.map_action" method="read">
+            <result name="friend_map">/AddressLocation/shopAddress.jsp</result>
+        </action>
+    </package>
+</struts>
